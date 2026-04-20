@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 import {
   Users,
   BookOpen,
@@ -109,7 +110,7 @@ export default function Sidebar({ activePath, collapsed, onToggleCollapse }: Sid
 
       {/* Collapse toggle (bottom) */}
       {collapsed && (
-        <div className="px-2 pb-4">
+        <div className="px-2 pb-2">
           <button
             onClick={onToggleCollapse}
             className="w-full flex justify-center p-2 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors"
@@ -120,14 +121,15 @@ export default function Sidebar({ activePath, collapsed, onToggleCollapse }: Sid
         </div>
       )}
 
-      {/* Version badge */}
-      {!collapsed && (
-        <div className="px-4 pb-4">
-          <p className="text-[10px] uppercase tracking-widest text-on-surface-variant opacity-60">
+      {/* Theme toggle + version badge */}
+      <div className={cn("pb-4", collapsed ? "px-2" : "px-3")}>
+        <ThemeToggle collapsed={collapsed} />
+        {!collapsed && (
+          <p className="mt-2 px-1 text-[10px] uppercase tracking-widest text-on-surface-variant opacity-60">
             v1.0 · MIT
           </p>
-        </div>
-      )}
+        )}
+      </div>
     </aside>
   );
 }

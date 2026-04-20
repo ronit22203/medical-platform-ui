@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
+/* ── Light mode tokens ───────────────────────────────────── */
 :root {
-  /* Clinical design tokens */
   --primary:              #005050;
   --primary-container:    #006a6a;
   --primary-fixed-dim:    #84d4d3;
@@ -23,6 +23,31 @@
   --status-eligible:      #16a34a;
   --status-partial:       #d97706;
   --status-excluded:      #dc2626;
+}
+
+/* ── Dark mode tokens ────────────────────────────────────── */
+.dark {
+  --primary:              #84d4d3;
+  --primary-container:    #5bbcbb;
+  --primary-fixed-dim:    #005050;
+
+  --surface:              #0f1414;
+  --surface-low:          #141a1a;
+  --surface-container:    #1c2424;
+  --surface-high:         #222c2c;
+  --surface-highest:      #2a3636;
+  --surface-lowest:       #192020;
+
+  --on-surface:           #e2e8e8;
+  --on-surface-variant:   #8fa8a7;
+  --on-primary:           #0f1414;
+
+  --tertiary:             #7ec8f0;
+  --outline-variant:      #2e4444;
+
+  --status-eligible:      #4ade80;
+  --status-partial:       #fbbf24;
+  --status-excluded:      #f87171;
 }
 
 @theme inline {
@@ -59,31 +84,40 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar styling */
+/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--outline-variant); border-radius: 99px; }
 
-/* Ghost border utility */
+/* Ghost border */
 .ghost-border {
   border: 1px solid rgba(190, 201, 200, 0.15);
 }
 
-/* Glassmorphism */
+/* Glassmorphism — adapts per theme */
 .glass {
   background: rgba(255, 255, 255, 0.70);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+.dark .glass {
+  background: rgba(20, 26, 26, 0.80);
+}
 
-/* Ambient shadow with primary tint */
+/* Ambient shadow */
 .ambient-shadow {
   box-shadow: 0px 12px 32px rgba(0, 80, 80, 0.06);
+}
+.dark .ambient-shadow {
+  box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.30);
 }
 
 /* Primary gradient button */
 .btn-primary-gradient {
   background: linear-gradient(135deg, #005050, #006a6a);
+}
+.dark .btn-primary-gradient {
+  background: linear-gradient(135deg, #006868, #008080);
 }
 
 /* Entity highlight */
@@ -93,3 +127,4 @@ body {
   border-radius: 3px;
   padding: 0 2px;
 }
+
