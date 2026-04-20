@@ -6,12 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatTimestamp(iso: string): string {
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(new Date(iso));
+  const d = new Date(iso);
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const month = months[d.getUTCMonth()];
+  const day = d.getUTCDate();
+  const hh = String(d.getUTCHours()).padStart(2, "0");
+  const mm = String(d.getUTCMinutes()).padStart(2, "0");
+  return `${month} ${day}, ${hh}:${mm} UTC`;
 }
 
 export function scoreColor(score: number): string {
