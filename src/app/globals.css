@@ -1,53 +1,55 @@
 @import "tailwindcss";
 
-/* ── Light mode tokens ───────────────────────────────────── */
-:root {
-  --primary:              #005050;
-  --primary-container:    #006a6a;
-  --primary-fixed-dim:    #84d4d3;
+@layer base {
+  /* ── Light mode tokens ─────────────────────────────────── */
+  :root {
+    --primary:              #005050;
+    --primary-container:    #006a6a;
+    --primary-fixed-dim:    #84d4d3;
 
-  --surface:              #f9f9f9;
-  --surface-low:          #f3f4f3;
-  --surface-container:    #edeeee;
-  --surface-high:         #e7e8e8;
-  --surface-highest:      #e2e3e2;
-  --surface-lowest:       #ffffff;
+    --surface:              #f9f9f9;
+    --surface-low:          #f3f4f3;
+    --surface-container:    #edeeee;
+    --surface-high:         #e7e8e8;
+    --surface-highest:      #e2e3e2;
+    --surface-lowest:       #ffffff;
 
-  --on-surface:           #1a1c1c;
-  --on-surface-variant:   #3e4948;
-  --on-primary:           #ffffff;
+    --on-surface:           #1a1c1c;
+    --on-surface-variant:   #3e4948;
+    --on-primary:           #ffffff;
 
-  --tertiary:             #00497d;
-  --outline-variant:      #bec9c8;
+    --tertiary:             #00497d;
+    --outline-variant:      #bec9c8;
 
-  --status-eligible:      #16a34a;
-  --status-partial:       #d97706;
-  --status-excluded:      #dc2626;
-}
+    --status-eligible:      #16a34a;
+    --status-partial:       #d97706;
+    --status-excluded:      #dc2626;
+  }
 
-/* ── Dark mode tokens ────────────────────────────────────── */
-.dark {
-  --primary:              #84d4d3;
-  --primary-container:    #5bbcbb;
-  --primary-fixed-dim:    #005050;
+  /* ── Dark mode tokens ──────────────────────────────────── */
+  .dark {
+    --primary:              #84d4d3;
+    --primary-container:    #5bbcbb;
+    --primary-fixed-dim:    #005050;
 
-  --surface:              #0f1414;
-  --surface-low:          #141a1a;
-  --surface-container:    #1c2424;
-  --surface-high:         #222c2c;
-  --surface-highest:      #2a3636;
-  --surface-lowest:       #192020;
+    --surface:              #0f1414;
+    --surface-low:          #141a1a;
+    --surface-container:    #1c2424;
+    --surface-high:         #222c2c;
+    --surface-highest:      #2a3636;
+    --surface-lowest:       #192020;
 
-  --on-surface:           #e2e8e8;
-  --on-surface-variant:   #8fa8a7;
-  --on-primary:           #0f1414;
+    --on-surface:           #e2e8e8;
+    --on-surface-variant:   #8fa8a7;
+    --on-primary:           #0f1414;
 
-  --tertiary:             #7ec8f0;
-  --outline-variant:      #2e4444;
+    --tertiary:             #7ec8f0;
+    --outline-variant:      #2e4444;
 
-  --status-eligible:      #4ade80;
-  --status-partial:       #fbbf24;
-  --status-excluded:      #f87171;
+    --status-eligible:      #4ade80;
+    --status-partial:       #fbbf24;
+    --status-excluded:      #f87171;
+  }
 }
 
 @theme inline {
@@ -94,7 +96,7 @@ body {
   border: 1px solid rgba(190, 201, 200, 0.15);
 }
 
-/* Glassmorphism — adapts per theme */
+/* Glassmorphism */
 .glass {
   background: rgba(255, 255, 255, 0.70);
   backdrop-filter: blur(12px);
@@ -127,4 +129,3 @@ body {
   border-radius: 3px;
   padding: 0 2px;
 }
-
